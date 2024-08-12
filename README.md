@@ -2,6 +2,37 @@
 
 A custom rating view for SwiftUI
 
+A view of inline images that represents a rating.
+Tapping on an image will change it from an unfilled to a filled version of the image. 
+HKRating has a set of predefined images and also supports custom images for rating.
+
+## Usage
+The following example shows a HKRating view with a maximum rating of 5 red hearts, each with a width of 40, and an initial rating of 2:
+
+```swift
+struct ContentView: View {
+
+    @State var currentRating = 2
+
+    var body: some View {
+        VStack {
+            Text("My Rating")
+            HKRating(maxRating: 5,
+                     currentRating: $currentRating,
+                     width: 40,
+                     color: .red,
+                     ratingImage: .heart)
+        }
+        .padding()
+    }
+}
+```
+
+Output:
+
+<img width="396" alt="HKRating" src="https://github.com/user-attachments/assets/1d2d6e64-71dc-4e88-9d0c-971a6d91e748">
+
+
 ## Installing HKRating
 HKRating supports installation via [Swift Package Manager](https://www.swift.org/package-manager/).
 
